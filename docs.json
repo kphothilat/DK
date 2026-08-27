@@ -1,0 +1,139 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Support Training Hub",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#4ADE80",
+    "dark": "#15803D"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Overview",
+        "pages": [
+          "index"
+        ]
+      },
+      {
+        "group": "T-37792 \u2014 GitLab permission error",
+        "pages": [
+          "tickets/t-37792/question",
+          "tickets/t-37792/answer"
+        ]
+      },
+      {
+        "group": "T-39330 \u2014 GA4 firing before consent",
+        "pages": [
+          "tickets/t-39330/question",
+          "tickets/t-39330/answer"
+        ]
+      },
+      {
+        "group": "T-36730 \u2014 Enterprise upgrade for compliance",
+        "pages": [
+          "tickets/t-36730/question",
+          "tickets/t-36730/answer"
+        ]
+      },
+      {
+        "group": "T-39063 \u2014 404s and custom domain issues",
+        "pages": [
+          "tickets/t-39063/question",
+          "tickets/t-39063/answer"
+        ]
+      },
+      {
+        "group": "T-39175 \u2014 AI credits reduced after Enterprise upgrade",
+        "pages": [
+          "tickets/t-39175/question",
+          "tickets/t-39175/answer"
+        ]
+      },
+      {
+        "group": "T-27903 \u2014 What happens when trial ends",
+        "pages": [
+          "tickets/t-27903/question",
+          "tickets/t-27903/answer"
+        ]
+      },
+      {
+        "group": "T-39659 \u2014 Domain validation stuck on Retry",
+        "pages": [
+          "tickets/t-39659/question",
+          "tickets/t-39659/answer"
+        ]
+      },
+      {
+        "group": "T-38715 \u2014 Second product docs under same domain",
+        "pages": [
+          "tickets/t-38715/question",
+          "tickets/t-38715/answer"
+        ]
+      },
+      {
+        "group": "T-39496 \u2014 Deployment fires before CI spec is ready",
+        "pages": [
+          "tickets/t-39496/question",
+          "tickets/t-39496/answer"
+        ]
+      },
+      {
+        "group": "T-39298 \u2014 Three docs sites under one domain, urgent launch",
+        "pages": [
+          "tickets/t-39298/question",
+          "tickets/t-39298/answer"
+        ]
+      },
+      {
+        "group": "T-39209 \u2014 Deployments failing after repo move",
+        "pages": [
+          "tickets/t-39209/question",
+          "tickets/t-39209/answer"
+        ]
+      },
+      {
+        "group": "T-39142 \u2014 502 on deployment after merge",
+        "pages": [
+          "tickets/t-39142/question",
+          "tickets/t-39142/answer"
+        ]
+      },
+      {
+        "group": "T-38997 \u2014 Gated content and user groups",
+        "pages": [
+          "tickets/t-38997/question",
+          "tickets/t-38997/answer"
+        ]
+      },
+      {
+        "group": "T-36297 \u2014 Security review questionnaire",
+        "pages": [
+          "tickets/t-36297/question",
+          "tickets/t-36297/answer"
+        ]
+      },
+      {
+        "group": "Scenario 1",
+        "pages": [
+          "scenarios/scenario-1/question",
+          "scenarios/scenario-1/answer"
+        ]
+      },
+      {
+        "group": "Scenario 2",
+        "pages": [
+          "scenarios/scenario-2/question",
+          "scenarios/scenario-2/answer"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": []
+  },
+  "footer": {
+    "socials": {}
+  }
+}
