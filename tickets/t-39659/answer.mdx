@@ -1,0 +1,12 @@
+---
+title: "T-39659 — Domain validation stuck on Retry — Answer"
+description: "Drafted reply for T-39659"
+---
+
+## Draft reply
+
+<Info>
+Based on what I can see: both the TXT and CNAME records are typically required for validation to complete — the TXT record alone is usually not sufficient. The CNAME is what actually routes traffic and often what the validation check confirms is in place.
+
+I'd recommend adding the CNAME record and then retrying validation. If that still fails, we can escalate further and have our team run diagnostics on your domain.
+</Info>

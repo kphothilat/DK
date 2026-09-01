@@ -1,0 +1,14 @@
+---
+title: "T-39209 — Deployments failing after repo move — Answer"
+description: "Drafted reply for T-39209"
+---
+
+## Draft reply
+
+Based on the documentation, the key issue is that the webhook is captured at install time — simply updating the repo URL in settings is not enough. Here's what to do:
+
+1. Disconnect and reconnect the GitLab project in the Mintlify dashboard. The webhook URL and project access token are registered at install time, so the old connection still points to the previous repo location.
+2. Ensure the reconnecting account has Owner or Maintainer access on the new repo location — GitLab requires this role to create project access tokens. A lower-permission account will appear to connect successfully but fail on every deployment.
+3. After reconnecting, verify that project access tokens are not disabled at the group or instance level in GitLab.
+
+The disconnect → reconnect step is the critical one; it forces Mintlify to re-register the webhook against the new repo path.

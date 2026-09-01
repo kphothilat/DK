@@ -1,0 +1,52 @@
+---
+title: "Scenario 2 — Traffic spike investigation"
+description: "Unexplained weekend traffic spike from three SF IPs"
+---
+
+## Customer problem
+
+> Since last week, more than 50% of our normal weekly traffic came from just three San Francisco IP addresses over a single weekend. It's not our team. Did something change on your end?
+
+## Context
+
+- Mintlify did not make any changes that would explain this.
+- Customer is a large enterprise running developer docs on Mintlify.
+- To investigate, the following query was run against the analytics database (ClickHouse):
+
+```sql
+SELECT
+    ip,
+    count() AS views,
+    uniq(path) AS unique_pages,
+    min(created_at) AS first_seen,
+    max(created_at) AS last_seen,
+    any(user_agent) AS sample_ua
+FROM events
+WHERE subdomain = 'box'
+  AND created_at >= toDateTime('2026-07-18 00:00:00')
+  AND event = 'docs.content.view'
+GROUP BY ip
+ORDER BY views DESC
+LIMIT 20
+```
+
+### Query output (top rows)
+
+| # | ip | views | unique_pages | sample_ua |
+|---|----|-------|--------------|-----------|
+| 1 | 104.22.100.132 | 11684 | 2035 | Mozilla/5.0 (iPhone...) Safari/604.1 |
+| 2 | 104.22.104.32 | 8063 | 1923 | Mozilla/5.0 (X11; Linux...) |
+| 3 | 104.22.101.168 | 8038 | 1938 | amazon-Quick-on-behalf-of-be9d6918 |
+| 4 | 104.22.101.169 | 7945 | 1961 | amazon-kendra |
+| 5 | 104.22.93.99 | 7935 | 1933 | Mozilla/5.0 (X11; Linux...) |
+
+**Notes:**
+- Each row is one IP and its total traffic for the date range.
+- `sample_ua` is one arbitrarily sampled user agent from that IP — not a summary of all traffic from it, just a single sampled request.
+- **Hint:** the signal is rows 3 and 4: `amazon-Quick-on-behalf-of-be9d6918` and `amazon-kendra`.
+
+## Questions
+
+1. Based on the information provided, what is the likely cause of this traffic spike?
+2. Using that theory, what could the customer have done to create this spike?
+3. Write a reply to the customer, incorporating these two concepts.

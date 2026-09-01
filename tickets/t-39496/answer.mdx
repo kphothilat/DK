@@ -1,0 +1,15 @@
+---
+title: "T-39496 — Deployment fires before CI spec is ready — Answer"
+description: "Drafted reply for T-39496"
+---
+
+## Draft reply
+
+Use Mintlify's "Trigger deployment" API endpoint instead of relying on the automatic push-triggered deploy.
+
+The docs confirm there is a `POST https://api.mintlify.com/project/update/:projectId` endpoint specifically designed for CI/CD integration — so hosted-spec updates can redeploy docs from CI on demand.
+
+The recommended pattern:
+1. Disable or ignore the automatic deploy triggered on push (or restructure your CI so the Mintlify deploy step only runs after your spec generation job completes).
+2. At the end of your CI pipeline — after your OpenAPI spec is generated and committed — call the `project/update` API to trigger the Mintlify deployment.
+3. You can then poll `GET https://api.mintlify.com/project/update-status/:statusId` (returned from the trigger call) to check deployment status.
