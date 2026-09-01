@@ -13,3 +13,8 @@ The recommended pattern:
 1. Disable or ignore the automatic deploy triggered on push (or restructure your CI so the Mintlify deploy step only runs after your spec generation job completes).
 2. At the end of your CI pipeline — after your OpenAPI spec is generated and committed — call the `project/update` API to trigger the Mintlify deployment.
 3. You can then poll `GET https://api.mintlify.com/project/update-status/:statusId` (returned from the trigger call) to check deployment status.
+
+## Source
+
+- [Plain thread](https://app.plain.com/workspace/w_01H3FZJ8MG74GFXA5WA3MPB446/thread/th_01KYWNCPMA0ESYNP935Y1B9YSN/)
+- [Notion page](https://app.notion.com/p/T-39496-3bbaa841023480078c7dfb580cfb3851?pvs=21)
