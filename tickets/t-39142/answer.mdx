@@ -1,0 +1,16 @@
+---
+title: "T-39142 — 502 on deployment after merge — Answer"
+description: "Drafted reply for T-39142"
+---
+
+## Draft reply
+
+502 errors after a PR is most likely a proxy misconfiguration (Cloudflare, nginx, AWS CloudFront, etc.). Test your `*.mintlify.app` origin URL directly (e.g. `yoursite.mintlify.app`). If that loads fine, Mintlify's build and infra are healthy and the 502 is coming from your custom domain's proxy.
+
+1. If the `.mintlify.app` URL also fails, then yes — retry the deployment manually from the dashboard using the re-trigger button on the failed deployment.
+2. If the retry also fails with no clear error, that warrants a support escalation for engineering investigation.
+
+## Source
+
+- [Plain thread](https://app.plain.com/workspace/w_01H3FZJ8MG74GFXA5WA3MPB446/thread/th_01KYH335H6JMRJ4TENZ2M7S0Z0/)
+- [Notion page](https://app.notion.com/p/T-39142-3bfaa8410234807e9623c6eff5775702?pvs=21)

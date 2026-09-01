@@ -1,0 +1,12 @@
+---
+title: "T-39496 — Deployment fires before CI spec is ready"
+description: "OpenAPI spec / deployment timing"
+---
+
+## Customer message
+
+> Hi - we generate our OpenAPI spec as part of our CI pipeline, and Mintlify uses that spec to render our API reference. The problem is that Mintlify's deployment triggers immediately on push, before our spec generation job has finished. This means our API docs sometimes get deployed with a stale spec. Is there a way to delay or condition Mintlify's deployment so it only fires after our OpenAPI spec is ready?
+
+<Note>
+This is the question/prompt page. See the **Answer** page for the drafted reply.
+</Note>
